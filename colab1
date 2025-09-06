@@ -1,0 +1,33 @@
+# Task
+Create environment setup for a Vite + React project.
+
+## Files to create at project root
+
+1. **.env.local**
+   ```
+   VITE_API_URL=http://localhost:4000
+   VITE_APP_NAME=NODUS Dashboard (Dev)
+   ```
+2. **.env.example**
+   ```
+   VITE_API_URL=http://localhost:4000
+   VITE_APP_NAME=NODUS Dashboard
+   ```
+
+## Update .gitignore (append if needed)
+```
+.env
+.env.*
+!.env.example
+```
+
+## Constraints
+- Do not modify package.json scripts.
+- Do not hardcode URLs in source files; rely on import.meta.env.
+- Confirm file paths are project root, not /src.
+
+## After
+Open `src/api.js` and verify it uses:
+```js
+baseURL: import.meta.env.VITE_API_URL
+```
